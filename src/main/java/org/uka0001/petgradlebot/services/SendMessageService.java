@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class SendMessageService {
@@ -20,7 +21,7 @@ public class SendMessageService {
   }
 
   public void test1(Message message) {
-    var ms1 = SendMessage.builder()
+    SendMessage ms1 = SendMessage.builder()
             .text("<b>Bold</b> " +
                     "<i>italic</i>" +
                     " <code>mono</code> " +
@@ -33,8 +34,8 @@ public class SendMessageService {
   }
 
   public void test2(Message message) {
-    var markup = new ReplyKeyboardMarkup();
-    var keyboardRows = new ArrayList<KeyboardRow>();
+    ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
+    List<KeyboardRow> keyboardRows = new ArrayList<KeyboardRow>();
     KeyboardRow row1 = new KeyboardRow();
     KeyboardRow row2 = new KeyboardRow();
     KeyboardRow row3 = new KeyboardRow();

@@ -37,7 +37,7 @@ public class CallbackQueryHandler implements Handler<CallbackQuery> {
               "\n" +
               "І воля святая!";
       Integer messageId = callbackQuery.getMessage().getMessageId();
-      var editMessageText = new EditMessageText();
+      EditMessageText editMessageText = new EditMessageText();
       editMessageText.setChatId(String.valueOf(callbackQuery.getMessage().getChatId()));
       editMessageText.setMessageId(messageId);
       editMessageText.setText(poemText);
