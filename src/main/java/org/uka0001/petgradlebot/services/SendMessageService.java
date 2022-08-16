@@ -56,7 +56,7 @@ public class SendMessageService {
     markup.setResizeKeyboard(true);
     markup.setOneTimeKeyboard(true);
     SendMessage sendMessage = new SendMessage();
-    sendMessage.setText("Test");
+    sendMessage.setText("/start");
     sendMessage.setChatId(String.valueOf(message.getChatId()));
     sendMessage.setReplyMarkup(markup);
     messageSender.sendMessage(sendMessage);

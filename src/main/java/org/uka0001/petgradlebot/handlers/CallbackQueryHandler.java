@@ -20,22 +20,8 @@ public class CallbackQueryHandler implements Handler<CallbackQuery> {
 
   @Override
   public void choose(CallbackQuery callbackQuery) {
-    if (callbackQuery.getData().equals("next_poem")) {
-      String poemText = "І вам слава, сині гори,\n" +
-              "\n" +
-              "Кригою окуті.\n" +
-              "\n" +
-              "І вам, лицарі великі,\n" +
-              "\n" +
-              "Богом не забуті.\n" +
-              "\n" +
-              "Борітеся — поборете,\n" +
-              "\n" +
-              "Вам Бог помагає!\n" +
-              "\n" +
-              "За вас правда, за вас слава\n" +
-              "\n" +
-              "І воля святая!";
+    if (callbackQuery.getData().equals("next")) {
+      String poemText = "другий адвокат, якого ми знайшли";
       Integer messageId = callbackQuery.getMessage().getMessageId();
       EditMessageText editMessageText = new EditMessageText();
       editMessageText.setChatId(String.valueOf(callbackQuery.getMessage().getChatId()));
@@ -47,7 +33,7 @@ public class CallbackQueryHandler implements Handler<CallbackQuery> {
                               Collections.singletonList(
                               InlineKeyboardButton.builder()
                                       .text("Посилання")
-                                      .url("http://litopys.org.ua/shevchenko/shev139.htm")
+                                      .url("http://google.com.ua")
                                       .build()
                       )).build());
       messageSender.sendEditMessage(editMessageText);

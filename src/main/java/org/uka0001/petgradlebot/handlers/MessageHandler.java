@@ -85,31 +85,17 @@ public class MessageHandler implements Handler<Message> {
                 .chatId(String.valueOf(message.getChatId()))
                 .build());
       }
-      if (message.getText().equals("/get_poem")) {
+      if (message.getText().equals("/start")) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(String.valueOf(message.getChatId()));
-        sendMessage.setText("Як умру, то поховайте\n" +
-                "\n" +
-                "Мене на могилі\n" +
-                "\n" +
-                "Серед степу широкого\n" +
-                "\n" +
-                "На Вкраїні милій,\n" +
-                "\n" +
-                "Щоб лани широкополі,\n" +
-                "\n" +
-                "І Дніпро, і кручі\n" +
-                "\n" +
-                "Було видно, було чути,\n" +
-                "\n" +
-                "Як реве ревучий.");
+        sendMessage.setText("перший адвокат знайдений для вас");
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
         keyboard.add(
                 Collections.singletonList(
                         InlineKeyboardButton.builder()
-                                .text("Новий вірш")
-                                .callbackData("next_poem")
+                                .text("другий адвокат знайдений для вас")
+                                .callbackData("next")
                                 .build()));
         inlineKeyboardMarkup.setKeyboard(keyboard);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
